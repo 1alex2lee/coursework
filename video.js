@@ -26,6 +26,8 @@ function loadComments(file) {
 function writeComments(xml) {
   var i;
   var xmlDoc = xml.responseXML;
+  xmlDoc.documentElement.innerHTML += "<comments><user>eid</user><comment>i just said this</comment></comments>"
+  console.log(xmlDoc.documentElement.innerHTML)
   var table="<tr><th>Username</th><th>Comment</th></tr>";
   var x = xmlDoc.getElementsByTagName("comments");
   for (i = 0; i <x.length; i+=1) {
