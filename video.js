@@ -12,14 +12,14 @@ document.getElementById("videoPageBody").onload = function() {
   }
 };
 
-function loadComments() {
+function loadComments(file) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
       writeComments(this);
     }
   };
-  xhttp.open("GET", "./comments.xml", true);
+  xhttp.open("GET", file, true);
   xhttp.send();
 }
 
@@ -35,10 +35,9 @@ function writeComments(xml) {
     x[i].getElementsByTagName("comment")[0].childNodes[0].nodeValue +
     "</td></tr>";
   }
+  document.getElementById("commentSection").innerHTML = null;
   document.getElementById("commentSection").innerHTML += table;
 }
-
-loadComments();
 
 // document.getElementById("postComment").onclick = function () {
 //   var newComment = document.getElementById("newComment").value
@@ -77,22 +76,27 @@ function changeSource() {
       $("#g1cmscales").click(function(){
       $("#vidSource").attr("src", "./vids/Grade 1 C major scales.MOV");
       $("#vid").load();
+      loadComments("./comments/g1cmscales.xml");
       });
       $("#g1gmscales").click(function(){
       $("#vidSource").attr("src", "./vids/Grade 1 G major scales.MOV");
       $("#vid").load();
+      loadComments("./comments/g1gmscales.xml");
       });
     $("#greatestloveofall").click(function(){
       $("#vidSource").attr("src", "./vids/greatest love of all.MOV");
       $("#vid").load();
+      loadComments("./comments/greatestloveofall.xml");
       });
     $("#medley").click(function(){
       $("#vidSource").attr("src", "./vids/medley.MOV");
       $("#vid").load();
+      loadComments("./comments/medley.xml");
       });
     $("#世上只有").click(function(){
       $("#vidSource").attr("src", "./vids/世上只有.MOV");
       $("#vid").load();
+      loadComments("./comments/世上只有.xml");
       });
 };
 
