@@ -78,6 +78,10 @@ function changeSource() {
       $("#vidSource").attr("src", "./vids/Grade 1 C major scales.MOV");
       $("#vid").load();
       });
+      $("#g1gmscales").click(function(){
+      $("#vidSource").attr("src", "./vids/Grade 1 G major scales.MOV");
+      $("#vid").load();
+      });
     $("#greatestloveofall").click(function(){
       $("#vidSource").attr("src", "./vids/greatest love of all.MOV");
       $("#vid").load();
