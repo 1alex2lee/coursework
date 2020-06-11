@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en-gb">
+<meta charset="utf-8">
+<title>Absolute Music</title>
+<link rel="stylesheet" href="default.css">
+<link rel="shortcut icon" href="favicon.png">
+<script>const loggedin = true;</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="module "src="video.js"></script>
+
+<header>
+    <h1 id="hiUser"></h1>
+    <section class="login"></section> 
+</header>
+
+<body id="videoPageBody">
+    <div class="sidenav">
+        <a id="g1cmscales">Grade 1 C major scales</a>
+        <a id="greatestloveofall">Greatest Love of All</a>
+        <a id="medley">Medley</a>
+        <a id="世上只有">世上只有</a>
+    </div>
+    <video id="vid" width="70%" height="50%" controls>
+        <source id="vidSource" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="commentForm">
+        <h3>Comments</h3>
+        <table id="commentSection" class="commentSection">
+        </table>
+        <textarea class="commentBox" name="comment" id="newComment" rows="5" cols="50" tabindex="4"  placeholder="Enter comment..."></textarea>
+        <button id="postComment">Submit Comment</button>
+    </div>
+</body>
+
+<ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="videos.html" class="activepage">Videos</a></li>
+    <li><a href="sheetmusic.html">Sheet Music</a></li>
+    <li><a href="#about">Contact</a></li>
+    <li style="float:right"><a href="login.html">Log In</a></li>
+</ul>

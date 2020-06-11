@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-gb">
+<meta charset="utf-8">
+<title>Absolute Music</title>
+<link rel="stylesheet" href="default.css">
+<link rel="shortcut icon" href="favicon.png">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="module" src="login.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_vERfr3UYJ1cNXynK5XsmL");
+   })();
+</script>
+
+<body>
+
+    <header>
+        <h1 id="hiUser"></h1>
+        <section class="login"></section> 
+    </header>
+
+    <form class="loginForm" name="loginForm">
+        Enter your email: <input type="text" name="userEmail" id="userEmail">
+        <input type="button" id="getCode" value="Get verification code"></br></br>
+        Enter the verification code: <input type="text" name="codeEntered" id="enteredCode">
+        <input type="button" id="submitCode" value="Enter verification code">
+    </form>
+    <button id="logout" class="logoutbutton">Log Out</button>
+</body>
+<ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="sheetmusic.html">Sheet Music</a></li>
+    <li><a href="#about">Contact</a></li>
+    <li style="float:right"><a  class="activepage">Log In</a></li>
+</ul>

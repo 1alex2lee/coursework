@@ -1,0 +1,182 @@
+:root {
+    --banner-height: 70px;
+    --button-height: 70px;
+    --ul-height: 45px;
+    --sidenav-width: 130px;
+    --banner-colour: #ffffff;
+    --nav-colour: #ffffff;
+    --messagepane-colour: #ffffff;
+}
+
+body {
+    background: white;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 14pt;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+}
+
+header {
+    background-color: var(--banner-colour);
+    height: var(--banner-height);
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+  font-size: 24pt;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    top: var(--banner-height);
+    height: var(--ul-height);
+    width: 100%;
+  }
+  
+li {
+    float: left;
+  }
+  
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+li a:hover:not(.activepage) {
+    background-color: #eee;
+  }
+
+video {
+    position: fixed;
+    left: calc(0.5 * calc(100% - var(--sidenav-width)));
+    text-align: right;
+    top: 130px;
+    transform: translateX(-35%);
+  }
+
+.activepage {
+    background-color: #4CAF50;
+  }
+
+  .fb-page {
+    top: calc(var(--banner-height) + var(--ul-height));
+    width: 100%; 
+    height: 100%;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: var(--sidenav-width);
+    position: fixed;
+    z-index: 1;
+    top: calc(var(--banner-height) + var(--ul-height));
+    left: 0;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #2196F3;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #064579;
+  }
+  
+  .form-popup {
+    display: none;
+    position: fixed;
+    top: calc(var(--banner-height) + var(--ul-height));
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  .form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+  .loginForm {
+    position: absolute;
+    text-align: center;
+    top: calc(var(--banner-height) + var(--ul-height) + 150px);
+    left: calc(50% - 240px);
+  }
+
+  .commentForm {
+    position: absolute;
+    top: 65%;
+    left: calc(var(--sidenav-width));
+    margin-left: 5%;
+  }
+
+  .commentBox {
+    width: 100%;
+  }
+
+  .logoutbutton {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+  }
+
+table {
+    width: 100%;
+    padding: 15px;
+    border-spacing: 5px;
+  }
+
+th, td {
+  border-bottom: 1px solid #ddd;
+}
