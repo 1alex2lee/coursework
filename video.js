@@ -76,27 +76,27 @@ document.getElementById("postComment").onclick = function() {
 
 function changeSource() {
       $("#g1cmscales").click(function(){
-      $("#vidSource").attr("src", "./vids/Grade 1 C major scales.MOV");
+      $("#vidSource").attr("src", "./vids/Grade 1 C major scales.mp4");
       $("#vid").load();
       loadComments("./comments/g1cmscales.xml");
       });
       $("#g1gmscales").click(function(){
-      $("#vidSource").attr("src", "./vids/Grade 1 G major scales.MOV");
+      $("#vidSource").attr("src", "./vids/Grade 1 G major scales.mp4");
       $("#vid").load();
       loadComments("./comments/g1gmscales.xml");
       });
     $("#greatestloveofall").click(function(){
-      $("#vidSource").attr("src", "./vids/greatest love of all.MOV");
+      $("#vidSource").attr("src", "./vids/greatest love of all.mp4");
       $("#vid").load();
       loadComments("./comments/greatestloveofall.xml");
       });
     $("#medley").click(function(){
-      $("#vidSource").attr("src", "./vids/medley.MOV");
+      $("#vidSource").attr("src", "./vids/medley.mp4");
       $("#vid").load();
       loadComments("./comments/medley.xml");
       });
     $("#世上只有").click(function(){
-      $("#vidSource").attr("src", "./vids/世上只有.MOV");
+      $("#vidSource").attr("src", "./vids/世上只有.mp4");
       $("#vid").load();
       loadComments("./comments/世上只有.xml");
       });
