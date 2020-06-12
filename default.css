@@ -156,9 +156,10 @@ video {
 
   .commentForm {
     position: absolute;
-    top: 65%;
+    top: 70%;    
     left: calc(var(--sidenav-width));
     margin-left: 5%;
+    width: 80%;
   }
 
   .commentBox {
@@ -171,16 +172,23 @@ video {
     left: 50%;
   }
 
-  .vid {
+
+.vid {
+  width: 70%;
+    max-height: 55%; 
     background-color: black;
+    float: right;
+    z-index:300000;
   }
 
 table {
     width: 100%;
     padding: 15px;
     border-spacing: 5px;
+    table-layout: fixed;
   }
 
 th, td {
   border-bottom: 1px solid #ddd;
+  overflow: hidden;
 }

@@ -28,10 +28,10 @@ function writeComments(xml) {
   var xmlDoc = xml.responseXML;
   xmlDoc.documentElement.innerHTML += "<comments><user>eid</user><comment>i just said this</comment></comments>"
   console.log(xmlDoc.documentElement.innerHTML)
-  var table="<tr><th>Username</th><th>Comment</th></tr>";
+  var table="<tr><th style='width: 25%'>User</th><th>Comment</th></tr>";
   var x = xmlDoc.getElementsByTagName("comments");
   for (i = 0; i <x.length; i+=1) {
-    table += "<tr><td>" +
+    table += "<tr><td style='text-align: center'>" +
     x[i].getElementsByTagName("user")[0].childNodes[0].nodeValue +
     "</td><td>" +
     x[i].getElementsByTagName("comment")[0].childNodes[0].nodeValue +
