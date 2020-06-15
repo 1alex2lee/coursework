@@ -4,34 +4,48 @@ const UI = Object.create(null);
 const el = (id) => document.getElementById(id);
 
 UI.init = function () {
-    const userInput = el("user-input");
-    const requestBox = el("requestBox");
-    const responseBox = el("responseBox");
-    const display = el("display");
+    const userInput = el("newComment");
+    // const requestBox = el("requestBox");
+    // const responseBox = el("responseBox");
+    const activeuser = sessionStorage.getItem("user");
 
-    userInput.onkeydown = function (event) {
-        if (event.key !== "Enter" || event.shiftKey) {
-            return; // Do nothing special.
-        }
+    el("postComment").onclick = function (event) {
+        // if (event.key !== "Enter" || event.shiftKey) {
+        //     return; // Do nothing special.
+        // }
+        console.log("Submit button clicked")
+
+        event.preventDefault();
 
         const request = {
-            "message": userInput.value
+            user:activeuser,comment:userInput.value
         };
-        requestBox.value = JSON.stringify(request);
+        // requestBox.value = JSON.stringify(request);
 
         const response = Ajax.query(request);
 
         response.then(function (object) {
-            responseBox.textContent = JSON.stringify(object);
+            console.log(object[0].user)
+            var string = "<tr><th style='width: 25%'>User</th><th>Comment</th></tr>"
+            object.forEach(function(each) {
+                string += "<tr><td style='text-align: center'>"+each.user+"</td><td>"+each.comment+"</td></tr>"
+            })
+            // responseBox.textContent = string;
+            el("commentSection").innerHTML = string
         });
 
-        const responseMessage = response.then((res) => res.message);
+        // response.then(function(object) {
+        //     return object.json();x
+        // }).then(function (data) {
+        //     console.log(data);
+        // });
 
-        responseMessage.then(function (msg) {
-            display.textContent = msg;
-        });
+        // const responseMessage = response.then((res) => res.message);
 
-        event.preventDefault();
+        // responseMessage.then(function (msg) {
+        //     display.textContent = msg;
+        // });
+
     };
 };
 

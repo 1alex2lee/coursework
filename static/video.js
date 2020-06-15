@@ -1,3 +1,9 @@
+import UI from "./ui.js";
+
+window.addEventListener("DOMContentLoaded", function () {
+    UI.init();
+});
+
 document.getElementById("hiUser").innerHTML =
 "Hello" + sessionStorage.getItem("username") + ". Welcome to Absolute Music.";
 
