@@ -3,8 +3,6 @@ import Ajax from "./ajax.js";
 const UI = Object.create(null);
 const el = (id) => document.getElementById(id);
 
-
-
 UI.init = function () {
     const userInput = el("user-input");
     const requestBox = el("requestBox");
