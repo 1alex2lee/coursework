@@ -30,8 +30,8 @@ const handler = function (obj) {
     }
 
     function addComment(obj) {
-        var activeuser = Object.keys(obj)[0]
-        var newcomment = obj[activeuser]
+        var activeuser = obj.user
+        var newcomment = obj.comment
         var db = openDatabase();
         db.run("INSERT INTO grade1cmajor(user, comment) VALUES('"+activeuser+"', '"+newcomment+"')", function(err) {
             if (err) {

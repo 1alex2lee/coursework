@@ -7,7 +7,7 @@ UI.init = function () {
     const userInput = el("newComment");
     // const requestBox = el("requestBox");
     // const responseBox = el("responseBox");
-    const activeuser = sessionStorage.getItem("user");
+    const activeuser = sessionStorage.getItem("username");
 
     el("postComment").onclick = function (event) {
         // if (event.key !== "Enter" || event.shiftKey) {
@@ -20,7 +20,6 @@ UI.init = function () {
         const request = {
             user:activeuser,comment:userInput.value
         };
-        // requestBox.value = JSON.stringify(request);
 
         const response = Ajax.query(request);
 
