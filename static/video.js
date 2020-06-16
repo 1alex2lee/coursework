@@ -81,12 +81,12 @@ document.getElementById("postComment").onclick = function() {
 };
 
 function changeSource() {
-      $("#g1cmscales").click(function(){
+      $("#grade1cmajor").click(function(){
       $("#vidSource").attr("src", "./vids/Grade 1 C major scales.mp4");
       $("#vid").load();
       loadComments("./comments/g1cmscales.xml");
       });
-      $("#g1gmscales").click(function(){
+      $("#grade1gmajor").click(function(){
       $("#vidSource").attr("src", "./vids/Grade 1 G major scales.mp4");
       $("#vid").load();
       loadComments("./comments/g1gmscales.xml");

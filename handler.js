@@ -9,6 +9,7 @@
 import sqlite3 from "sqlite3";
 
 const handler = function (obj) {
+    console.log(obj)
 
     function openDatabase() {
         let db = new sqlite3.Database('./unknown_name.sqlite', sqlite3.OPEN_READWRITE, function(err) {
@@ -32,21 +33,27 @@ const handler = function (obj) {
     function addComment(obj) {
         var activeuser = obj.user
         var newcomment = obj.comment
-        var db = openDatabase();
-        db.run("INSERT INTO grade1cmajor(user, comment) VALUES('"+activeuser+"', '"+newcomment+"')", function(err) {
-            if (err) {
-            return console.log(err.message);
-            }
-            console.log("comment added");
-        });
-        closeDatabase(db);
+        var activevideo = obj.vid
+        if (newcomment != ""){
+            var db = openDatabase();
+            var query = "INSERT INTO "+activevideo+"(user, comment) VALUES('"+activeuser+"', '"+newcomment+"')"
+            db.run(query, function(err) {
+                if (err) {
+                    return console.log(err.message);
+                }
+                console.log("comment added");
+            });
+            closeDatabase(db);
+        };
     };
 
     addComment(obj);
 
     return new Promise(function (resolve, reject) {
+        var activevideo = obj.vid
         var db = openDatabase();
-        db.all(`SELECT user user, comment comment FROM grade1cmajor ORDER BY primary_key`, [], function (err, rows) {
+        var q = "SELECT user user, comment comment FROM "+activevideo+" ORDER BY primary_key"
+        db.all(q, [], function (err, rows) {
             if (err) {
                 reject(err);
                 return;
