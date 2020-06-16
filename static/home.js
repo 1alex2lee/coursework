@@ -1,6 +1,7 @@
-var username = "default"; //prompt("Enter username")
-const header = "Hello " + username + ". Welcome to Absolute Music.";
-document.getElementById("hiUser").innerHTML = header;
+document.getElementById("homePageBody").onload = function() {
+    document.getElementById("hiUser").innerHTML =
+    "Hello" + sessionStorage.getItem("username") + ". Welcome to Absolute Music."
+};
 
 function openForm() {
     console.log("Login button pressed");

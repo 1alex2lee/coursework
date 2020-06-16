@@ -2,19 +2,19 @@ import Ajax from "./ajax.js";
 
 const UI = Object.create(null);
 const el = (id) => document.getElementById(id);
-var activevideo = null
 
 UI.init = function () {
     const userInput = el("newComment");
     // const requestBox = el("requestBox");
     // const responseBox = el("responseBox");
     const activeuser = sessionStorage.getItem("username");
+    sessionStorage.setItem("activevideo", null)
 
     function getComments(request) {
         const response = Ajax.query(request);
 
         response.then(function (object) {
-            console.log(object[0].user)
+            // console.log(object[0].user)
             var string = "<tr><th style='width: 25%'>User</th><th>Comment</th></tr>"
             object.forEach(function(each) {
                 string += "<tr><td style='text-align: center'>"+each.user+"</td><td>"+each.comment+"</td></tr>"
@@ -22,47 +22,29 @@ UI.init = function () {
             // responseBox.textContent = string;
             el("commentSection").innerHTML = string
         });
-    }
+    };
+
+    function refreshComments(vid) {
+        sessionStorage.setItem("activevideo", vid)
+        console.log(vid+" selected")
+        const request = {user:"", comment:"", vid: vid}
+        getComments(request)
+    };
 
     el("grade1cmajor").onclick = function() {
-        activevideo = "grade1cmajor"
-        const request = {
-            user: "", comment: "", vid: "grade1cmajor"
-        };
-
-        getComments(request);
+        refreshComments("grade1cmajor")
     };
     el("grade1gmajor").onclick = function() {
-        activevideo = "grade1gmajor"
-        const request = {
-            user: "", comment: "", vid: "grade1gmajor"
-        };
-
-        getComments(request);
+        refreshComments("grade1gmajor")
     };
     el("greatestloveofall").onclick = function() {
-        activevideo = "greatestloveofall"
-        const request = {
-            user: "", comment: "", vid: "greatestloveofall"
-        };
-
-        getComments(request);
+        refreshComments("greatestloveofall")
     };
     el("medley").onclick = function() {
-        activevideo = "medley"
-        const request = {
-            user: "", comment: "", vid: "medley"
-        };
-
-        getComments(request);
+        refreshComments("medley")
     };
     el("世上只有").onclick = function() {
-        activevideo = "世上只有"
-        const request = {
-            user: "", comment: "", vid: "世上只有"
-        };
-
-        getComments(request);
+        refreshComments("世上只有")
     };
 
     el("postComment").onclick = function(event) {
@@ -73,11 +55,14 @@ UI.init = function () {
 
         event.preventDefault();
 
+        var activevideo = sessionStorage.getItem("activevideo")
+
         const request = {
             user: activeuser, comment: userInput.value, vid: activevideo
         };
 
         getComments(request);
+        refreshComments(activevideo);
 
         // response.then(function(object) {
         //     return object.json();x

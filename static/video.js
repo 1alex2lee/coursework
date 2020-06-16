@@ -4,10 +4,9 @@ window.addEventListener("DOMContentLoaded", function () {
     UI.init();
 });
 
-document.getElementById("hiUser").innerHTML =
-"Hello" + sessionStorage.getItem("username") + ". Welcome to Absolute Music.";
-
 document.getElementById("videoPageBody").onload = function() {
+  document.getElementById("hiUser").innerHTML =
+  "Hello" + sessionStorage.getItem("username") + ". Welcome to Absolute Music.";
   var status = sessionStorage.getItem("loggedin");
   if (status === "true") {
     console.log("User is logged on");

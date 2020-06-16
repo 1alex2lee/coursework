@@ -12,11 +12,11 @@ const handler = function (obj) {
     console.log(obj)
 
     function openDatabase() {
-        let db = new sqlite3.Database('./unknown_name.sqlite', sqlite3.OPEN_READWRITE, function(err) {
+        let db = new sqlite3.Database('./comments.sqlite', sqlite3.OPEN_READWRITE, function(err) {
             if (err) {
             return console.error(err.message);
             }
-            console.log('Connected to the comments database.');
+            console.log('database opened');
         });
         return db
     }
@@ -26,7 +26,7 @@ const handler = function (obj) {
             if (err) {
             return console.error(err.message);
             }
-            console.log('Closed the database connection.');
+            console.log('database closed');
         });
     }
 
@@ -41,7 +41,7 @@ const handler = function (obj) {
                 if (err) {
                     return console.log(err.message);
                 }
-                console.log("comment added");
+                console.log("comment added to database");
             });
             closeDatabase(db);
         };
@@ -68,7 +68,7 @@ const handler = function (obj) {
                 var newentry = {user:row.user, comment:row.comment};
                 history.push(newentry);
             });
-            console.log(history)
+            console.log("comment section updated")
             resolve(history)
         })
         closeDatabase(db)
