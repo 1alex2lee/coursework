@@ -13,97 +13,36 @@ document.getElementById("videoPageBody").onload = function() {
   }
   if (status === "false" || status === null) {
     console.log ("User is not logged in");
+    alert("You need to log in first!")
     window.location.href = "login.html";
   }
-};
-
-function loadComments(file) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState === 4 && this.status === 200) {
-      writeComments(this);
-    }
-  };
-  xhttp.open("GET", file, true);
-  xhttp.send();
-}
-
-function writeComments(xml) {
-  var i;
-  var xmlDoc = xml.responseXML;
-  xmlDoc.documentElement.innerHTML += "<comments><user>eid</user><comment>i just said this</comment></comments>"
-  console.log(xmlDoc.documentElement.innerHTML)
-  var table="<tr><th style='width: 25%'>User</th><th>Comment</th></tr>";
-  var x = xmlDoc.getElementsByTagName("comments");
-  for (i = 0; i <x.length; i+=1) {
-    table += "<tr><td style='text-align: center'>" +
-    x[i].getElementsByTagName("user")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("comment")[0].childNodes[0].nodeValue +
-    "</td></tr>";
-  }
-  document.getElementById("commentSection").innerHTML = null;
-  document.getElementById("commentSection").innerHTML += table;
-}
-
-// document.getElementById("postComment").onclick = function () {
-//   var newComment = document.getElementById("newComment").value
-//   if (newComment != null) {
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function() {
-//       if (this.readyState == 4 && this.status == 200) {
-//         writeFile(this, newComment);
-//       }
-//     };
-//     xhttp.open("GET", "./comments.xml", true);
-//     xhttp.send();
-//   }
-// }
-
-// function writeFile(xml, newComment) {
-//   var newComment = document.getElementById("newComment").value
-//   console.log(newComment)
-//   var xmlDoc = xml.responseXML;
-//   var newel = xmlDoc.createElement("user");
-//   var x = xmlDoc.getElementsByTagName("comments")[0];
-//   x.appendChild(newel);
-//   document.getElementById("newComment").value = null
-// }
-
-document.getElementById("postComment").onclick = function() {
-  console.log("submit comment pressed");
-  var newComment = document.getElementById("newComment").value;
-  var string = "<tr><td>"+$.trim(sessionStorage.getItem("username"))+"</td><td>"+newComment+"</td></tr>";
-  console.log(string);
-  document.getElementById("commentSection").innerHTML += string;
-  document.getElementById("newComment").value = null;
 };
 
 function changeSource() {
       $("#grade1cmajor").click(function(){
       $("#vidSource").attr("src", "./vids/Grade 1 C major scales.mp4");
       $("#vid").load();
-      loadComments("./comments/g1cmscales.xml");
+      document.getElementById("newComment").value = null;
       });
       $("#grade1gmajor").click(function(){
       $("#vidSource").attr("src", "./vids/Grade 1 G major scales.mp4");
       $("#vid").load();
-      loadComments("./comments/g1gmscales.xml");
+      document.getElementById("newComment").value = null;
       });
     $("#greatestloveofall").click(function(){
       $("#vidSource").attr("src", "./vids/greatest love of all.mp4");
       $("#vid").load();
-      loadComments("./comments/greatestloveofall.xml");
+      document.getElementById("newComment").value = null;
       });
     $("#medley").click(function(){
       $("#vidSource").attr("src", "./vids/medley.mp4");
       $("#vid").load();
-      loadComments("./comments/medley.xml");
+      document.getElementById("newComment").value = null;
       });
     $("#世上只有").click(function(){
       $("#vidSource").attr("src", "./vids/世上只有.mp4");
       $("#vid").load();
-      loadComments("./comments/世上只有.xml");
+      document.getElementById("newComment").value = null;
       });
 };
 

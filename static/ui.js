@@ -24,7 +24,7 @@ UI.init = function () {
         });
     };
 
-    function refreshComments(vid) {
+    function refreshComments(vid) { 
         sessionStorage.setItem("activevideo", vid)
         console.log(vid+" selected")
         const request = {user:"", comment:"", vid: vid}
@@ -47,35 +47,29 @@ UI.init = function () {
         refreshComments("世上只有")
     };
 
-    el("postComment").onclick = function(event) {
-        // if (event.key !== "Enter" || event.shiftKey) {
-        //     return; // Do nothing special.
-        // }
+    el("postComment").onclick = function() {
         console.log("Submit button clicked")
-
         event.preventDefault();
-
         var activevideo = sessionStorage.getItem("activevideo")
-
         const request = {
             user: activeuser, comment: userInput.value, vid: activevideo
         };
-
         getComments(request);
         refreshComments(activevideo);
+    };
 
-        // response.then(function(object) {
-        //     return object.json();x
-        // }).then(function (data) {
-        //     console.log(data);
-        // });
-
-        // const responseMessage = response.then((res) => res.message);
-
-        // responseMessage.then(function (msg) {
-        //     display.textContent = msg;
-        // });
-
+    userInput.onkeydown = function() {
+        if (event.key !== "Enter" || event.shiftKey) {
+            return; // Do nothing special.
+        };
+        console.log("Submit button clicked")
+        event.preventDefault();
+        var activevideo = sessionStorage.getItem("activevideo")
+        const request = {
+            user: activeuser, comment: userInput.value, vid: activevideo
+        };
+        getComments(request);
+        refreshComments(activevideo);
     };
 };
 

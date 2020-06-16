@@ -1,5 +1,7 @@
-document.getElementById("hiUser").innerHTML =
-"Hello" + sessionStorage.getItem("username") + ". Welcome to Absolute Music.";
+document.getElementById("loginPageBody").onload = function() {
+  document.getElementById("hiUser").innerHTML =
+  "Hello" + sessionStorage.getItem("username") + ". Welcome to Absolute Music."
+};
 
 document.getElementById("logout").onclick = function() {
   console.log("logout button pressed")
@@ -26,7 +28,7 @@ document.getElementById("getCode").onclick = function() {
         if (document.getElementById("enteredCode").value == code) {
           var username = prompt("Please enter your name.")
           sessionStorage.setItem("username", " " + username)
-          alert("You have logged in.");
+          // alert("You have logged in.");
           sessionStorage.setItem("loggedin", "true");
           console.log(sessionStorage.getItem("loggedin"))
           var frm = document.getElementsByName('loginForm')[0];

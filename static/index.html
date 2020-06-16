@@ -7,32 +7,35 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="module "src="video.js"></script>
 
-<header>
+<header role="banner">
     <h1 id="hiUser"></h1>
     <section class="login"></section> 
 </header>
 
-<body id="videoPageBody">
-    <div class="sidenav">
-        <a id="grade1cmajor">Grade 1 C major scales</a>
-        <a id="grade1gmajor">Grade 1 G major scales</a>
-        <a id="greatestloveofall">Greatest Love of All</a>
-        <a id="medley">Medley</a>
-        <a id="世上只有">世上只有</a>
+<body id="videoPageBody"0>
+    <div class="sidenav" role="navigation">
+        <button class="button" id="grade1cmajor" tabindex="0">Grade 1 C major scales</button>
+        <button class="button" id="grade1gmajor" tabindex="0">Grade 1 G major scales</button>
+        <button class="button" id="greatestloveofall" tabindex="0">Greatest Love of All</button>
+        <button class="button" id="medley" tabindex="0">Medley</button>
+        <button class="button" id="世上只有" tabindex="0">世上只有</button>
     </div>
+    <div role="main">
     <video id="vid" class="vid" controls>
         <source id="vidSource" type="video/mp4">
         Your browser does not support the video tag.
+        <track src="captions.vtt" kind="captions" srclang="en" label="English">
     </video>
     <div class="commentForm">
-        <h3>Comments</h3>
+        <h2>Comments</h2>
         <table id="commentSection" class="commentSection">
         </table>
-        <textarea class="commentBox" name="comment" id="newComment" rows="5" cols="50" tabindex="4"  placeholder="Enter comment..."></textarea>
+        <textarea class="commentBox" id="newComment" rows="5" cols="50" tabindex="0" placeholder="Enter comment..."></textarea>
         <button id="postComment">Submit Comment</button>
     </div>
-</body>
+</div>
 
+<div role="list">
 <ul>
     <li><a href="home.html">Home</a></li>
     <li><a href="index.html" class="activepage">Videos</a></li>
@@ -40,3 +43,5 @@
     <li><a href="#about">Contact</a></li>
     <li style="float:right"><a href="login.html">Log In</a></li>
 </ul>
+</div>
+</body>
