@@ -17,6 +17,18 @@
             "reAttach": true,
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}/static"
+        },
+        {
+            "name": "Mocha Tests",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "reloadOnAttach": true,
+            "file": "${workspaceFolder}/test.html",
+            "preferences": {"security.fileurl.strict_origin_policy": false,
+                "privacy.file_unique_origin:": false
+            },
+            "clearConsoleOnReload": true
         }
     ]
 }

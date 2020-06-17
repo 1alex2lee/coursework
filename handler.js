@@ -1,11 +1,3 @@
-
-// const handler = function (obj) {
-//     const reversed = obj.message.split("").reverse().join();
-//     return {
-//         "message": reversed
-//     };
-// };
-
 import sqlite3 from "sqlite3";
 
 const handler = function (obj) {
@@ -74,32 +66,5 @@ const handler = function (obj) {
         closeDatabase(db)
     })
 }
-
-    //     var db = openDatabase();
-    //     db.all(`SELECT user user, comment comment FROM grade1cmajor ORDER BY primary_key`, [], (err, rows) => {
-    //         if (err) {
-    //             throw err;
-    //         }
-    //         const history = []
-    //         // for (var i = 0; i < rows.length; i++) {
-    //         //     var row = rows[i]
-    //         //     var newentry = {user:row.user, comment:row.comment}
-    //         //     history.push(newentry)
-    //         // }
-    //         rows.forEach(row => history.push({user:row.user,comment=row.comment}))
-    //         console.log(history)
-    //         return (history)
-    //     })
-    //     closeDatabase(db)
-    // }
-
-    // addComment(obj);
-
-    // // var allComments = [{user:"alex", comment: "first"},{user:"alex", comment: "second"}]
-    // // var x = giveArray()
-    // var x = [{user:"alex",comment:"first"},{user:"alex",comment:"second"}]
-    // console.log("handler gives "+x)
-    // return x
-// };
 
 export default Object.freeze(handler);

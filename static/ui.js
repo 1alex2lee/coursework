@@ -73,4 +73,8 @@ UI.init = function () {
     };
 };
 
+UI.test = function (request) {
+    return Ajax.query(request);
+};
+
 export default Object.freeze(UI);

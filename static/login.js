@@ -1,6 +1,12 @@
 document.getElementById("loginPageBody").onload = function() {
+  var username = sessionStorage.getItem("username");
+  if (username != null) {  
+    document.getElementById("hiUser").innerHTML =
+    "Hello" + sessionStorage.getItem("username") + ". Welcome to Absolute Music."
+    return
+  };
   document.getElementById("hiUser").innerHTML =
-  "Hello" + sessionStorage.getItem("username") + ". Welcome to Absolute Music."
+  "Hello. Welcome to Absolute Music."
 };
 
 document.getElementById("logout").onclick = function() {
@@ -16,7 +22,7 @@ document.getElementById("getCode").onclick = function() {
     const userEmail = document.getElementById("userEmail").value;
     console.log(userEmail);
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail)) {
-      const code = Math.round(Math.random() * 9999);
+      const code = Math.floor(Math.random() * 8999 + 1000);
       console.log(code);
       var templateParams = {
         "email": userEmail,
@@ -32,7 +38,7 @@ document.getElementById("getCode").onclick = function() {
           sessionStorage.setItem("loggedin", "true");
           console.log(sessionStorage.getItem("loggedin"))
           var frm = document.getElementsByName('loginForm')[0];
-          window.location.href = "home.html";
+          window.location.href = "index.html";
         } else {
           alert("Verification code mismatch! Please try again.")
           sessionStorage.setItem("loggedin", "false");

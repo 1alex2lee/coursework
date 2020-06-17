@@ -20,12 +20,14 @@
         <button class="button" id="medley" tabindex="0">Medley</button>
         <button class="button" id="世上只有" tabindex="0">世上只有</button>
     </div>
-    <div role="main">
-    <video id="vid" class="vid" controls>
+    <div role="main" class="grid-container">
+    <div class="vidContainer">
+    <video id="vid" controls>
         <source id="vidSource" type="video/mp4">
         Your browser does not support the video tag.
         <track src="captions.vtt" kind="captions" srclang="en" label="English">
     </video>
+    </div>
     <div class="commentForm">
         <h2>Comments</h2>
         <table id="commentSection" class="commentSection">
@@ -40,7 +42,7 @@
     <li><a href="home.html">Home</a></li>
     <li><a href="index.html" class="activepage">Videos</a></li>
     <li><a href="sheetmusic.html">Sheet Music</a></li>
-    <li><a href="#about">Contact</a></li>
+    <li><a href="test.html">Test</a></li>
     <li style="float:right"><a href="login.html">Log In</a></li>
 </ul>
 </div>
