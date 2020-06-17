@@ -12,8 +12,11 @@ const arbVid = fc.constantFrom(
     "medley",
     "世上只有"
 );
+const user = fc.constantFrom("user");
 
-const arbObj = fc.object({key: "user", values: fc.string(), maxDepth: 0});
+const arbObj = fc.jsonObject({key: fc.constantFrom("user"), values: fc.string(), maxDepth: 0},
+                    {key: fc.constantFrom("comment"), values: fc.string(), maxDepth: 0},
+                    {key: fc.constantFrom("vid"), values: arbVid, maxDepth: 0});
 
 describe("Posting a comment", function () {
     it(

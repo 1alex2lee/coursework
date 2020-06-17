@@ -24,7 +24,7 @@
             "request": "launch",
             "reAttach": true,
             "reloadOnAttach": true,
-            "file": "${workspaceFolder}/test.html",
+            "file": "${workspaceFolder}/static/test.html",
             "preferences": {"security.fileurl.strict_origin_policy": false,
                 "privacy.file_unique_origin:": false
             },
