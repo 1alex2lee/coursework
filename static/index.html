@@ -9,41 +9,42 @@
 
 <header role="banner">
     <h1 id="hiUser"></h1>
-    <section class="login"></section> 
 </header>
 
-<body id="videoPageBody"0>
-    <div class="sidenav" role="navigation">
-        <button class="button" id="grade1cmajor" tabindex="0">Grade 1 C major scales</button>
-        <button class="button" id="grade1gmajor" tabindex="0">Grade 1 G major scales</button>
-        <button class="button" id="greatestloveofall" tabindex="0">Greatest Love of All</button>
-        <button class="button" id="medley" tabindex="0">Medley</button>
-        <button class="button" id="世上只有" tabindex="0">世上只有</button>
-    </div>
-    <div role="main" class="grid-container">
-    <div class="vidContainer">
-    <video id="vid" controls>
-        <source id="vidSource" type="video/mp4">
-        Your browser does not support the video tag.
-        <track src="captions.vtt" kind="captions" srclang="en" label="English">
-    </video>
-    </div>
-    <div class="commentForm">
-        <h2>Comments</h2>
-        <table id="commentSection" class="commentSection">
-        </table>
-        <textarea class="commentBox" id="newComment" rows="5" cols="50" tabindex="0" placeholder="Enter comment..."></textarea>
-        <button id="postComment">Submit Comment</button>
-    </div>
-</div>
+<body id="videoPageBody"></body>
 
-<div role="list">
-<ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="index.html" class="activepage">Videos</a></li>
-    <li><a href="sheetmusic.html">Sheet Music</a></li>
-    <li><a href="test.html">Test</a></li>
-    <li style="float:right"><a href="login.html">Log In</a></li>
-</ul>
+<main>
+
+            <video id="vid" controls>
+                <source id="vidSource" type="video/mp4">
+                Your browser does not support the video tag.
+                <track src="captions.vtt" kind="captions" srclang="en" label="English">
+            </video>
+
+        <section class="commentSection">
+            <h2>Comments</h2>
+            <table id="commentSection"></table>
+        </section>
+        <section>
+            <textarea class="commentBox" id="newComment" tabindex="0" placeholder="Enter comment..."></textarea>
+            <button id="postComment" class="submitButton">Submit Comment</button>
+        </section>
+</main>
+
+<nav>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html" class="activepage">Videos</a></li>
+        <li><a href="sheetmusic.html">Sheet Music</a></li>
+        <li><a href="test.html">Test</a></li>
+        <li style="float:right"><a href="login.html">Log In</a></li>
+    </ul>
+</nav>
+
+<div class="sidenav" role="navigation">
+    <button class="button" id="grade1cmajor" tabindex="0">Grade 1 C major scales</button>
+    <button class="button" id="grade1gmajor" tabindex="0">Grade 1 G major scales</button>
+    <button class="button" id="greatestloveofall" tabindex="0">Greatest Love of All</button>
+    <button class="button" id="medley" tabindex="0">Medley</button>
+    <button class="button" id="世上只有" tabindex="0">世上只有</button>
 </div>
-</body>
