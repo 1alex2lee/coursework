@@ -9,6 +9,8 @@ I am writing a website for a music school, to aid its transition to online learn
 On this website, there will be videos to watch and a comment section for users.
 Users must log in to view the videos.
 
+For the videos, download the vids folder here: https://drive.google.com/drive/folders/1KNCgG17MIztYTaUfnAaKiUvDtMdyLv1w?usp=sharing Copy folder into /static/
+
 ## Coding
 This project will be mostly coded in functional programming style. Not all functions will be pure, and some will be asynchronous.
 A static root provides the client side code and webpages, while server side code is run with Node.

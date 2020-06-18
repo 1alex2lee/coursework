@@ -8,15 +8,17 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/server.js"
+            "program": "${workspaceFolder}/server.js",
         },
         {
             "name": "Firefox debugger",
             "type": "firefox",
             "request": "launch",
-            "reAttach": true,
+            "reAttach": false,
             "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}/static"
+            "webRoot": "${workspaceFolder}/static",
+            "preferences": {"security.fileurl.strict_origin_policy": false,
+            }
         },
         {
             "name": "Mocha Tests",
