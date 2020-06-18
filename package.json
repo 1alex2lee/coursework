@@ -21,7 +21,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "jslint": "^0.12.1",
     "json": "^9.0.6",
+    "mocha": "^8.0.1",
     "node": "^14.4.0",
     "sqlite3": "^4.2.0"
   },

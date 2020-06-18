@@ -31,4 +31,4 @@ I also used the accessibility, network and element tools in Firefox to debug som
 I wrote 2 property-based tests with Mocha, but I had trouble getting them working.
 
 ## Best Practice
-All my code is well-commented, all functions and variables have suitable names, and my code follows a conventional style.
+All my code is well-commented, all functions and variables have suitable names, and my code follows a conventional style. I also corrected most errors threw by JSLint.

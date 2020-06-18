@@ -24,7 +24,7 @@
             "name": "Mocha Tests",
             "type": "firefox",
             "request": "launch",
-            "reAttach": true,
+            "reAttach": false,
             "reloadOnAttach": true,
             "file": "${workspaceFolder}/static/test.html",
             "preferences": {"security.fileurl.strict_origin_policy": false,

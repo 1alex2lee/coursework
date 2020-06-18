@@ -2,7 +2,7 @@
 // header to not include any usernames
 document.getElementById("loginPageBody").onload = function() {
   var username = sessionStorage.getItem("username");
-  if (username != null) {  
+  if (username != null) {
     document.getElementById("hiUser").innerHTML =
     "Hello" + sessionStorage.getItem("username") + ". Welcome to Absolute Music."
     return
