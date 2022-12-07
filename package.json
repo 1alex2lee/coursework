@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/DE1-Computing-2/week-5-tuesday-1alex2lee#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-session": "^1.17.1",
     "jslint": "^0.12.1",
     "json": "^9.0.6",
